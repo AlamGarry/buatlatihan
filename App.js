@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import ColorBox from './components/ColorBox';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <Text style={styles.heading}>
+          Here are some boxes of different color
+        </Text>
+
+        <ColorBox colorName={'Cyan'} hexCode={'#2aa198'} />
+        <ColorBox colorName={'Blue'} hexCode={'#268bd2'} />
+        <ColorBox colorName={'Magenta'} hexCode={'#d33682'} />
+        <ColorBox colorName={'Orange'} hexCode={'#cb4b16'} />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 50,
+    paddingHorizontal: 10,
+    backgroundColor: 'fff',
+  },
+  heading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
   },
 });
